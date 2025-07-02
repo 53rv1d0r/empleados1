@@ -1,0 +1,368 @@
+/* css/style.css */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+h1, h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: transparent;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+nav ul li {
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+nav ul li a {
+    background-color: #3a3295;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    display: block;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a:hover {
+    background-color: #2b256e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ESTILOS DE TABLA --- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: block; 
+    min-width: 0; 
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: auto; 
+    min-width: max-content;
+}
+/* --- ESTILOS DE FORMULARIO --- */
+form {
+    display: grid;
+    gap: 15px; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+    display: block; 
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"], /* Por si se añade en el futuro */
+form input[type="date"],
+form select {
+    width: calc(100% - 24px); /* Ocupa casi todo el ancho, restando el padding */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form select:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+    outline: none;
+}
+
+form button[type="submit"] {
+    background-color: #3a3295;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: auto; 
+    margin-top: 10px;
+    justify-self: start; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form button[type="submit"]:hover {
+    background-color: #2b256e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para mensajes de error */
+.error {
+    background-color: #ffe6e6;
+    border: 1px solid #ffb3b3;
+    color: #cc0000;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.error ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error li {
+    margin-bottom: 5px;
+}
+
+/* Estilos para el enlace "Volver al Listado" */
+p a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #003f7f;
+    text-decoration: underline;
+}
+
+/* Responsividad del formulario en pantallas pequeñas */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr; /* Una columna para que los campos se apilen */
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="date"],
+    form select {
+        width: 100%; /* Ocupa el 100% del ancho del contenedor del formulario */
+        padding: 10px;
+    }
+
+    form button[type="submit"] {
+        width: 100%; 
+        justify-self: stretch; 
+    }
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap; 
+}
+
+table th {
+    background-color: #3a3295;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+/*////////////////////////////////////////////////////////////////////////*/
+
+    td.actions a {
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        text-decoration: none;
+        display: inline-block; 
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        transition: background-color 0.2s ease;
+    }
+
+    td.actions a:hover {
+        transform: translateY(0); 
+    }
+
+    td.actions a:not(.delete) {
+        background-color: #007bff; 
+        color: white;
+    }
+
+    td.actions a:not(.delete):hover {
+        background-color: #0056b3;
+    }
+
+    td.actions .delete {
+        background-color: #dc3545; 
+        color: white;
+    }
+
+    td.actions .delete:hover {
+        background-color: #c82333;
+    }
+/*////////////////////////////////////////////////////////////////////////*/
+
+/* ... (acciones, formulario, errores) ... */
+
+/* ------------------------------------------------------------- */
+/* MEDIA QUERIES PARA RESPONSIVIDAD DE TABLA */
+/* ------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+        min-width: 0;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block; 
+        width: 100%; 
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px; /* Oculta los encabezados de la tabla original */
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 10px; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: left; 
+        white-space: normal; 
+        display: flex; 
+        flex-wrap: wrap; 
+        align-items: flex-start; 
+        justify-content: space-between; 
+        gap: 5px; 
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        /* Aseguramos que el label tome el espacio que necesita y se envuelva si es muy largo */
+        flex-basis: 45%; /* Le damos una base del 45% del ancho del td */
+        text-align: left;
+        padding-right: 5px; /* Pequeño padding a la derecha del label */
+        box-sizing: border-box;
+    }
+
+    /* Estilos para las acciones en móvil */
+    td.actions {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 10px; 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #f0f0f0; 
+        border-bottom: none; 
+    }
+
+}
